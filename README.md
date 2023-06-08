@@ -51,3 +51,16 @@ Returns
 
     tests/test_test.py::test_sum_as_string_py PASSED                                   [ 50%]
     tests/test_test.py::test_sum_as_string_rs PASSED                                   [100%]
+
+
+## When starting with stuff in the repo
+
+    make venv
+    make install
+    make build
+    make test
+
+Should return in the end
+
+    tests/test_test.py::test_sum_as_string_py PASSED                                   [ 50%]
+    tests/test_test.py::test_sum_as_string_rs PASSED                                   [100%]
