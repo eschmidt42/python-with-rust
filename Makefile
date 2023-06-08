@@ -7,6 +7,7 @@ help:
 	@echo "install : install dependencies into virtual environment."
 	@echo "compile : update the environment requirements after changes to dependencies in pyproject.toml."
 	@echo "test    : run pytests."
+	@echo "build   : build rust bits"
 
 # create a virtual environment
 .PHONY: venv
@@ -28,7 +29,17 @@ req-file := config/requirements.txt
 install: venv
 	source .venv/bin/activate && \
 	pip-sync $(req-file) && \
-	pip install -e . && \
+	pip install -e .
+
+# ==============================================================================
+# build rust component
+# ==============================================================================
+
+# environment for production
+.PHONY: build
+build: venv
+	source .venv/bin/activate && \
+	maturin develop
 
 # ==============================================================================
 # compile requirements
