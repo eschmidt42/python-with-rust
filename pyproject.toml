@@ -1,0 +1,41 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "python-with-rust"
+version = "0.1.0"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+description = "A simple experiment to call rust from python."
+dependencies = [
+    "maturin",
+    "pytest",
+    "black",
+    "isort"
+]
+
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+
+[tool.black]
+line-length = 80
+
+[tool.isort]
+multi_line_output = 3
+line_length = 80
+include_trailing_comma = true
+profile = "black"
+
+[tool.pytest.ini_options]
+pythonpath = ["python_package"]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+markers = [
+    "slow" # mark test as slow
+]
