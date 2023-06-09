@@ -168,3 +168,13 @@ Should return in the end
 
     tests/test_test.py::test_sum_as_string_py PASSED                                   [ 50%]
     tests/test_test.py::test_sum_as_string_rs PASSED                                   [100%]
+
+## References
+
+* https://medium.com/@MatthieuL49/a-mixed-rust-python-project-24491e2af424
+* https://www.peterbaumgartner.com/blog/wrapping-a-rust-crate-in-a-python-package/
+* https://www.maturin.rs/develop.html
+* https://towardsdatascience.com/nine-rules-for-writing-python-extensions-in-rust-d35ea3a4ec29
+* https://qxf2.com/blog/combining-rust-and-py03-with-python/
+* https://pyo3.rs/v0.18.3/
+* https://www.maturin.rs/
