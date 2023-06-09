@@ -21,7 +21,9 @@ dependencies = [
 
 
 [tool.maturin]
+bindings = "pyo3"
 features = ["pyo3/extension-module"]
+module-name = "python_with_rust._rust"
 
 [tool.black]
 line-length = 80
