@@ -35,9 +35,6 @@ include_trailing_comma = true
 profile = "black"
 
 [tool.pytest.ini_options]
-pythonpath = ["python_package"]
+pythonpath = ["python_with_rust"]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
-markers = [
-    "slow" # mark test as slow
-]
