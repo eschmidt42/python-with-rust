@@ -6,6 +6,7 @@ help:
 	@echo "venv    : creates the virtual environment in .venv."
 	@echo "install : install dependencies into virtual environment."
 	@echo "compile : update the environment requirements after changes to dependencies in pyproject.toml."
+	@echo "update  : install dependencies into virtual environment after 'make compile'."
 	@echo "test    : run pytests."
 	@echo "build   : build rust bits"
 
@@ -27,6 +28,16 @@ req-file := config/requirements.txt
 # environment for production
 .PHONY: install
 install: venv
+	source .venv/bin/activate && \
+	pip-sync $(req-file) && \
+	pip install -e .
+
+# ==============================================================================
+# update dependencies after changes to pyproject.toml and `make compile`
+# ==============================================================================
+
+.PHONY: update
+update: 
 	source .venv/bin/activate && \
 	pip-sync $(req-file) && \
 	pip install -e .
