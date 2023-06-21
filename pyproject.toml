@@ -16,7 +16,9 @@ dependencies = [
     "maturin",
     "pytest",
     "black",
-    "isort"
+    "isort",
+    "jupyterlab",
+    "numpy"
 ]
 
 
